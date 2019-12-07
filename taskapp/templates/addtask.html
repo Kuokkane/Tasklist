@@ -10,13 +10,13 @@
 			{%if task.completed%}
 		<tr>
 			<td class="striker">{{ task.task }}</a></td>
-            <td><center>{{ task.completed}} </center></td>
+            <td><center>Done</center></td>
             <td><center><a href="{%url 'delete' task.id %}">Delete</a></center></td>
 		</tr>
 		{%else%}
 		<tr>
 			<td>{{ task.task }}</a></td>
-            <td><center>{{ task.completed}} </center></td>
+            <td><center><a href="{% url 'mark_as_done' task.id %}">Done?</a></center></td>
             <td><center><a href="{%url 'delete' task.id %}">Delete</a></center></td>
 		</tr>
 		{%endif%}
